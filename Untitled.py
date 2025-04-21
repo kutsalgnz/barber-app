@@ -11,7 +11,7 @@ import os
 
 st.title("💈 Berber Randevu Sistemi")
 
-CSV_FILE = "C:\Users\kutsa\OneDrive\Masaüstü\Kuti\App\randevular.csv"
+CSV_FILE = "randevular.csv"
 
 # Çalışma saatleri
 start_time = datetime.strptime("10:00", "%H:%M").time()
@@ -72,6 +72,13 @@ if st.button("Randevu Al"):
         st.success(f"Randevunuz alındı: {date} günü saat {selected_slot}, süre: {duration} dk")
     else:
         st.warning("Lütfen adınızı ve saat seçimini yapın.")
+
+# Randevuları göster
+if not df.empty:
+    st.subheader("Alınan Randevular:")
+    st.dataframe(df)
+else:
+    st.write("Henüz herhangi bir randevu alınmamış.")
 
 
 # In[ ]:
