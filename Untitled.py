@@ -66,7 +66,8 @@ if st.button("Randevu Al"):
             "time": selected_slot + ":00",  # saniyeyi de eklemek için
             "duration": duration
         }
-        df = df.append(new_row, ignore_index=True)
+        # .append yerine pd.concat kullanıyoruz
+        df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
         df.to_csv(CSV_FILE, index=False)
         st.success(f"Randevunuz alındı: {date} günü saat {selected_slot}, süre: {duration} dk")
     else:
