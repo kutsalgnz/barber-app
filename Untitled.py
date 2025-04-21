@@ -11,7 +11,7 @@ import os
 
 st.title("💈 Berber Randevu Sistemi")
 
-CSV_FILE = "randevular.csv"
+CSV_FILE = "C:\Users\kutsa\OneDrive\Masaüstü\Kuti\App\randevular.csv"
 
 # Çalışma saatleri
 start_time = datetime.strptime("10:00", "%H:%M").time()
